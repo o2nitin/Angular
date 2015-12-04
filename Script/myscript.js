@@ -1,10 +1,53 @@
 var myApp = angular.module("myModule" ,[]);
 
 var myController = function($scope){
-    var country={ 
+    var country=[{ 
         name:"India",
                 capital:"New Delhi",
-                flag:"/Images/indian-flag.png"};
+        cities:[
+            
+            {
+                name:"Hyderabad"
+            },
+            {
+                name:"Pune"
+            },
+            {
+                name:"Mumbai"
+            }
+        ]},
+                 
+                 {name:"USA",
+                capital:"Washington D.C",
+        cities:[
+            
+            {
+                name:"New York"
+            },
+            {
+                name:"Dallas"
+            },
+            {
+                name:"Las Vegas"
+            }
+        ]
+            },
+     
+                 {name:"UK",
+                capital:"London",
+        cities:[
+            
+            {
+                name:"Menchester"
+            },
+            {
+                name:"cardiff"
+            },
+            {
+                name:"Edinburgh"
+            }
+        ]
+}];
     var employees=[
         {firstName:"Abhijit",lastName:"Galphat",gender:"Male",salary:"55000"},
         {firstName:"Amol",lastName:"pawal",gender:"Male",salary:"69000"},
