@@ -5,6 +5,7 @@
     
     <script src="Script/angular.js"></script>
     <script src="Script/myscript.js"></script>
+    <script src="Script/filter.js"></script>
     <link rel="stylesheet" type="text/css" href="Css/flasheffect.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -17,22 +18,22 @@
     <div ng-controller=myController>
        
         
-        Search<input type="text" placeholder="FirstName, LastName" ng-model="searchText"/>
+       
 
         <table class="table table-condensed">
         <thead>
             <tr>
-            <th ng-click="sortData('firstName')">FirstName <div ng-class="getSortClass('firstName')"></div></th>
+            <th >FirstName </th>
             <th>LastName</th>
             <th>Gender</th>
-            <th ng-click="sortData('salary')">Salary<div ng-class="getSortClass('salary')"></div></th>
+            <th >Salary</th>
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="employee in employees | filter:search">
+            <tr ng-repeat="employee in employees ">
                 <td>{{employee.firstName}}</td>
                 <td>{{employee.lastName}}</td>
-                <td>{{employee.gender}}</td>
+                <td>{{employee.gender | gender }}</td>
                 <td>{{employee.salary | currency:"$"}}</td>
                 </tr>
             </tbody>
