@@ -6,11 +6,12 @@ var myController = function($scope){
         {firstName:"Abhijit",lastName:"Galphat",gender:"Male",salary:"55000"},
         {firstName:"Amol",lastName:"pawal",gender:"Male",salary:"69000"},
         {firstName:"Nilesh",lastName:"xyz",gender:"Male",salary:"56000"},
-        {firstName:"Maduri",lastName:"Dixit",gender:"Female",salary:"85000"}
+        {firstName:"Maduri",lastName:"Dixit",gender:"Female",salary:"85000"},
+        {firstName:"Rohit",lastName:"Sharma",gender:"Male",salary:"99000"},
+        {firstName:"Priyanka",lastName:"Chopra",gender:"Female",salary:"99900"}
     ];
 
     $scope.employees=employees;
-    $scope.message="1st Text Displayed by Angular JS";
     $scope.sortColumn="firstName";
     $scope.revSort=true;
     $scope.sortData= function(column){

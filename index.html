@@ -17,7 +17,7 @@
     <div ng-controller=myController>
        
         
-        
+        Search<input type="text" placeholder="Search Employee" ng-model="searchText"/>
 
         <table class="table table-condensed">
         <thead>
@@ -29,7 +29,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="employee in employees | orderBy:sortColumn:revSort">
+            <tr ng-repeat="employee in employees | filter:searchText">
                 <td>{{employee.firstName}}</td>
                 <td>{{employee.lastName}}</td>
                 <td>{{employee.gender}}</td>
