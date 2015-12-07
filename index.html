@@ -5,43 +5,31 @@
     
     <script src="Script/angular.js"></script>
     <script src="Script/myscript.js"></script>
+    <link rel="stylesheet" type="text/css" href="Css/flasheffect.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     </head>
 <body>
     
-    
+    <div class="container">
     <div ng-controller=myController>
-        {{message}}
-        <div >
-            <ul >
-                <li ng-repeat="con in country">Country Name : {{con.name}}
-                <ul>
-                <li ng-repeat="city in con.cities">City Name: {{city.name}}</li>
-                </ul>
-                </li>
-                
-                
-            
-            </ul>
        
-       </div>
+        
         
 
-        Order By : <select ng-model="sortColumn">
-        <option value="firstName">Name ASC</option>
-        <option value="lastName">LastName ASC</option>
-        <option value="gender">Gender ASC</option>
-        <option value="+salary">Salary DSC</option></select>
-        <table>
+        <table class="table table-condensed">
         <thead>
             <tr>
-            <th>FirstName</th>
+            <th ng-click="sortData('firstName')">FirstName <div ng-class="getSortClass('firstName')"></div></th>
             <th>LastName</th>
             <th>Gender</th>
-            <th>Salary</th>
+            <th ng-click="sortData('salary')">Salary<div ng-class="getSortClass('salary')"></div></th>
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="employee in employees | orderBy:sortColumn">
+            <tr ng-repeat="employee in employees | orderBy:sortColumn:revSort">
                 <td>{{employee.firstName}}</td>
                 <td>{{employee.lastName}}</td>
                 <td>{{employee.gender}}</td>
@@ -50,6 +38,7 @@
             </tbody>
         </table>
     </div>
+        </div>
     
     </body>
 </html>
