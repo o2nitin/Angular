@@ -57,5 +57,6 @@ var myController = function($scope){
     $scope.country=country;
     $scope.employees=employees;
     $scope.message="1st Text Displayed by Angular JS";
+    $scope.sortColumn="firstName";
 };
 myApp.controller("myController",myController);

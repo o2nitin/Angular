@@ -26,7 +26,11 @@
        </div>
         
 
-        
+        Order By : <select ng-model="sortColumn">
+        <option value="firstName">Name ASC</option>
+        <option value="lastName">LastName ASC</option>
+        <option value="gender">Gender ASC</option>
+        <option value="+salary">Salary DSC</option></select>
         <table>
         <thead>
             <tr>
@@ -37,11 +41,11 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="employee in employees">
+            <tr ng-repeat="employee in employees | orderBy:sortColumn">
                 <td>{{employee.firstName}}</td>
                 <td>{{employee.lastName}}</td>
                 <td>{{employee.gender}}</td>
-                <td>{{employee.salary}}</td>
+                <td>{{employee.salary | currency:"$"}}</td>
                 </tr>
             </tbody>
         </table>
