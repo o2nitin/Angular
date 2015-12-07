@@ -12,17 +12,19 @@ var myController = function($scope){
     ];
 
     $scope.employees=employees;
-    $scope.sortColumn="firstName";
-    $scope.revSort=true;
-    $scope.sortData= function(column){
-        $scope.revSort=($scope.sortColumn==column) ? !$scope.revSort : false;
-        $scope.sortColumn=column;
-    }
-    $scope.getSortClass=function(column){
-        if($scope.sortColumn==column){
-            return $scope.revSort ? 'arrow-down' : 'arrow-up'
+    
+     
+    $scope.search=function(item){
+        if($scope.searchText == undefined){
+            return true;
         }
-        return '';
+        else{
+            if(item.firstName.toLowerCase().indexOf($scope.searchText.toLowerCase()) != -1 ||
+              item.lastName.toLowerCase().indexOf($scope.searchText.toLowerCase()) != -1 ){
+                return true;
+            }
+        }
+        return false;
     }
 };
 myApp.controller("myController",myController);
