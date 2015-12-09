@@ -18,7 +18,11 @@
     <div ng-controller=myController>
        
         
-       
+       <ul>
+  <li ng-repeat="x in names">
+    {{ x.Name }}
+  </li>
+</ul>
 
         <table class="table table-condensed">
         <thead>
@@ -38,6 +42,8 @@
                 </tr>
             </tbody>
         </table>
+        
+        
     </div>
         </div>
     

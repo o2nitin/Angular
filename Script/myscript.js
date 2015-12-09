@@ -1,19 +1,6 @@
-var myApp = angular.module("myModule" ,[]).filter("gender",function(){
-    
-    return function(gender){
-       switch(gender){
-            case 10 : 
-                return "Male";
-            case 20:
-                return "female";
-           default:
-               return "***";
-               
-        }
-    }
-});
+var myApp = angular.module("myModule" ,[]);
 
-var myController = function($scope){
+var myController = function($scope,$http){
 
     var employees=[
         {firstName:"Abhijit",lastName:"Galphat",gender:10,salary:"55000"},
@@ -26,6 +13,7 @@ var myController = function($scope){
 
     $scope.employees=employees;
     
+    $http.get("http://www.w3schools.com/angular/customers.php").then(function(response) {$scope.names = response.data.records;});
      
    
 };
